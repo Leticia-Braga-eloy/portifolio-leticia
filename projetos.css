@@ -1,0 +1,234 @@
+:root {
+  /* Modo Claro */
+  --background-color: #f4f4f4;
+  --sidebar-background: #2b2b2b;
+  --text-color: white;
+  --button-color: #007bff; /* Cor de fundo do botão */
+  --button-hover-color: #0056b3; /* Cor ao passar o mouse */
+  --button-active-color: #004494; /* Cor quando pressionado */
+  --footer-background: #2b2b2b;
+}
+
+body.dark-mode {
+  /* Modo Escuro */
+  --background-color: #1a1a1a;
+  --sidebar-background: #333;
+  --text-color: #f4f4f4;
+  --button-color: #42a5f5; /* Cor de fundo do botão no modo escuro */
+  --button-hover-color: #1e88e5; /* Cor ao passar o mouse no modo escuro */
+  --button-active-color: #1976d2; /* Cor quando pressionado no modo escuro */
+  --footer-background: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: var(--background-color);
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  background-color: var(--sidebar-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  padding: 20px;
+}
+
+.logo {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu ul li {
+  margin: 60px 0;
+}
+
+.menu ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 300%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide a {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.footer {
+  background-color: var(--footer-background);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+  background-color: var(--button-active-color);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  body {
+      min-height: 100vh;
+      flex-direction: column;
+  }
+  
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      text-align: center;
+  }
+
+  .menu ul li {
+      margin: 20px 0;
+  }
+
+  .menu ul li a {
+      font-size: 1.2em;
+  }
+
+  .carousel-container {
+      max-width: 100%;
+  }
+
+  .content {
+      width: 100%;
+      padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+      font-size: 2.5em;
+  }
+
+  .menu ul li {
+      margin: 15px 0;
+  }
+
+  .menu ul li a {
+      font-size: 1.1em;
+  }
+
+  .carousel-container {
+      max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+      font-size: 2em;
+  }
+
+  .menu ul li {
+      margin: 10px 0;
+  }
+
+  .menu ul li a {
+      font-size: 1em;
+  }
+
+  .prev-btn, .next-btn {
+      font-size: 18px;
+      padding: 5px;
+  }
+
+  .footer {
+      font-size: 0.8em;
+  }
+
+  .carousel-container {
+      max-width: 100%;
+  }
+}

@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #f06292;
+    --js-color: #ff4081;
+    --css-color: #42a5f5;
+    --html-color: #ffca28;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color); /* Fundo branco para o corpo */
+    color: var(--secondary-color);
+    
+        opacity: 0;
+        transition: opacity 1s ease; /* Prepara a transição */
+    
+}
+
+header {
+    display: flex;
+    width: 115.2%;
+}
+
+.header-section {
+    flex: 1; /* Para dividir igualmente entre as seções */
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.black {
+    background-color: var(--secondary-color); /* Fundo preto para a seção do logo */
+}
+
+.white {
+    background-color: var(--primary-color); /* Fundo branco para a seção de navegação */
+    padding-left: 20%;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--primary-color); /* Texto branco para o logo */
+}
+
+.logo-letter {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Texto preto para os links */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--highlight-color);
+}
+
+.hero {
+    display: flex;
+    height: 100vh; /* Ajuste a altura total da seção hero */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color); /* Fundo preto para a imagem */
+}
+
+.image-container img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.intro-text {
+    flex: 1;
+    background-color: var(--primary-color); /* Fundo branco para o texto */
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.skills-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.js-icon {
+    background-color: var(--js-color);
+}
+
+.css-icon {
+    background-color: var(--css-color);
+}
+
+.html-icon {
+    background-color: var(--html-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Muda a direção do header para coluna em telas menores */
+        align-items: center; /* Centraliza os itens no header */
+    }
+    
+    .header-section {
+        padding: 10px 20px; /* Menos padding em telas menores */
+    }
+
+    .logo {
+        font-size: 2.5rem; /* Reduz o tamanho do logo */
+    }
+
+    nav ul {
+        flex-direction: column; /* Alinha os links na vertical */
+        gap: 20px; /* Menos espaço entre os links */
+    }
+
+    .hero {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        height: auto; /* Ajusta a altura para caber em telas menores */
+    }
+
+    .image-container {
+        width: 100%; /* A imagem ocupa toda a largura */
+        padding: 20px; /* Adiciona padding */
+    }
+
+    .intro-text {
+        padding: 20px; /* Ajusta o padding no texto */
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem; /* Reduz o tamanho do título */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2rem; /* Reduz ainda mais o tamanho do logo */
+    }
+
+    nav a {
+        font-size: 1rem; /* Reduz o tamanho da fonte dos links */
+    }
+
+    .intro-text h1 {
+        font-size: 2rem; /* Reduz ainda mais o tamanho do título */
+    }
+
+    .skills-icons {
+        flex-direction: column; /* Alinha os ícones na vertical */
+        align-items: center; /* Centraliza os ícones */
+    }
+
+    .icon {
+        font-size: 1rem; /* Reduz o tamanho dos ícones */
+        padding: 5px 10px; /* Ajusta o padding dos ícones */
+    }
+}

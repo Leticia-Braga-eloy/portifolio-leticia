@@ -1,0 +1,184 @@
+:root {
+    --background-color: #f4f4f4; /* Fundo claro */
+    --sidebar-color: #2b2b2b; /* Fundo da sidebar */
+    --text-color: white; /* Texto da sidebar */
+    --content-background: white; /* Fundo do conteúdo */
+    --heading-color: #333; /* Cor do texto do cabeçalho */
+    --footer-background: #2b2b2b; /* Fundo do rodapé */
+    --footer-text-color: white; /* Texto do rodapé */
+}
+
+body.dark-mode {
+    --background-color: #121212; /* Fundo escuro */
+    --sidebar-color: #1e1e1e; /* Fundo da sidebar escura */
+    --text-color: #ffffff; /* Texto claro */
+    --content-background: #1e1e1e; /* Fundo do conteúdo escuro */
+    --heading-color: #f4f4f4; /* Cor do texto do cabeçalho claro */
+    --footer-background: #1e1e1e; /* Fundo do rodapé escuro */
+    --footer-text-color: #ffffff; /* Texto do rodapé claro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: var(--sidebar-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.logo {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 60px 0; /* Aumenta o espaçamento entre os itens */
+}
+
+.menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5em; /* Aumenta um pouco o tamanho da fonte */
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--content-background);
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    color: var(--heading-color);
+}
+
+.about-text {
+    margin-left: 250px;
+    background-color: #333; /* Fundo escuro para a seção sobre */
+    color: var(--text-color);
+    padding: 100px;
+    border-radius: 50px;
+    width: 60%;
+}
+
+.footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+.button {
+    display: inline-block; /* Para que o padding funcione corretamente */
+    padding: 12px 24px; /* Aumenta o padding para um botão maior */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    background-color: #007bff; /* Cor de fundo */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado */
+    text-align: center; /* Centraliza o texto */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima */
+  }
+  
+  .button:active {
+    transform: translateY(0); /* Retorna ao normal ao clicar */
+    background-color: #004494; /* Cor de fundo quando pressionado */
+  }
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Sidebar ocupa toda a largura */
+        padding: 10px; /* Menos padding em telas menores */
+    }
+    
+    .logo {
+        font-size: 2.5em; /* Reduz o tamanho do logo */
+        margin-bottom: 30px; /* Menos espaço abaixo do logo */
+    }
+    
+    .menu ul li {
+        margin: 30px 0; /* Menos espaçamento entre os itens */
+    }
+    
+    .menu ul li a {
+        font-size: 1.2em; /* Reduz o tamanho da fonte do menu */
+    }
+    
+    .content {
+        padding: 20px; /* Menos padding na área de conteúdo */
+    }
+    
+    .content h1 {
+        font-size: 2em; /* Reduz o tamanho do título */
+        margin-bottom: 50px; /* Menos espaço abaixo do título */
+    }
+    
+    .about-text {
+        margin-left: 20px; /* Remove margem da esquerda */
+        padding: 50px; /* Menos padding no texto sobre */
+        width: auto; /* Largura automática para ocupar o espaço */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none; /* Esconde a sidebar em telas muito pequenas */
+    }
+    
+    .content {
+        padding: 10px; /* Menos padding na área de conteúdo */
+    }
+    
+    .content h1 {
+        font-size: 1.5em; /* Reduz ainda mais o tamanho do título */
+        margin-bottom: 30px; /* Menos espaço abaixo do título */
+    }
+    
+    .about-text {
+        padding: 20px; /* Menos padding no texto sobre */
+        border-radius: 20px; /* Reduz o arredondamento dos cantos */
+    }
+}

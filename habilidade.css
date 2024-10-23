@@ -1,0 +1,223 @@
+:root {
+    --primary-color-light: #ffffff; /* Cor de fundo clara */
+    --secondary-color-light: #f4f4f4; /* Cor de fundo do body */
+    --sidebar-color-light: #2b2b2b; /* Cor da sidebar */
+    --text-color-light: #333333; /* Cor do texto */
+
+    --primary-color-dark: #121212; /* Cor de fundo escura */
+    --secondary-color-dark: #1e1e1e; /* Cor de fundo do body */
+    --sidebar-color-dark: #2b2b2b; /* Cor da sidebar */
+    --text-color-dark: #f4f4f4; /* Cor do texto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: var(--secondary-color-light);
+    color: white;
+    display: flex;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: var(--sidebar-color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    color: var(--text-color-dark);
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 60px 0; /* Aumenta o espaçamento entre os itens */
+}
+
+.menu ul li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 1.5em; /* Aumenta um pouco o tamanho da fonte */
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#habilidades h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.skill-icon {
+    width: 80px;
+    height: auto;
+}
+
+.footer {
+    background-color: var(--sidebar-color-light);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.button {
+    display: inline-block; /* Para que o padding funcione corretamente */
+    padding: 12px 24px; /* Aumenta o padding para um botão maior */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    background-color: #007bff; /* Cor de fundo */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado */
+    text-align: center; /* Centraliza o texto */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima */
+}
+
+.button:active {
+    transform: translateY(0); /* Retorna ao normal ao clicar */
+    background-color: #004494; /* Cor de fundo quando pressionado */
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.2em;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5em;
+    }
+
+    .menu ul li {
+        margin: 15px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.1em;
+    }
+
+    #habilidades h2 {
+        font-size: 24px;
+    }
+
+    .skills-icons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .skill-icon {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2em;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1em;
+    }
+
+    #habilidades h2 {
+        font-size: 20px;
+    }
+
+    .skills-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skill-icon {
+        width: 50px;
+    }
+
+    .footer {
+        font-size: 0.8em;
+    }
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
+}
+
+.sidebar.dark-mode {
+    background-color: var(--sidebar-color-dark);
+    color: var(--text-color-dark);
+}
+
+.menu ul li a.dark-mode {
+    color: var(--text-color-dark);
+}

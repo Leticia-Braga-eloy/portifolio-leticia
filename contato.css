@@ -1,0 +1,235 @@
+:root {
+    /* Cores do Modo Claro */
+    --primary-bg: #f4f4f4; /* Fundo claro */
+    --primary-text: #333; /* Texto escuro */
+    --sidebar-bg: #2b2b2b; /* Fundo da sidebar */
+    --sidebar-text: white; /* Texto da sidebar */
+    --button-bg: #007bff; /* Cor do botão */
+    --button-hover-bg: #0056b3; /* Cor do botão ao passar o mouse */
+    --input-border: #ccc; /* Cor da borda dos inputs */
+}
+
+[data-theme='dark'] {
+    /* Cores do Modo Escuro */
+    --primary-bg: #121212; /* Fundo escuro */
+    --primary-text: #f4f4f4; /* Texto claro */
+    --sidebar-bg: #1f1f1f; /* Fundo da sidebar no modo escuro */
+    --sidebar-text: white; /* Texto da sidebar */
+    --button-bg: #007bff; /* Cor do botão */
+    --button-hover-bg: #0056b3; /* Cor do botão ao passar o mouse */
+    --input-border: #555; /* Cor da borda dos inputs no modo escuro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--sidebar-text);
+    padding: 20px;
+}
+
+.logo {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 60px 0;
+}
+
+.menu ul li a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    width: 80%;
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button {
+    display: inline-block; /* Para que o padding funcione corretamente */
+    padding: 12px 24px; /* Aumenta o padding para um botão maior */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    background-color: #007bff; /* Cor de fundo */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado */
+    text-align: center; /* Centraliza o texto */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima */
+}
+
+.button:active {
+    transform: translateY(0); /* Retorna ao normal ao clicar */
+    background-color: #004494; /* Cor de fundo quando pressionado */
+}
+
+.contact-form button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--primary-text);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.2em;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 5px;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .menu ul li {
+        margin: 15px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.1em;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .contact-form label {
+        font-size: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+    }
+}
